@@ -26,7 +26,8 @@ def max_val(t):
                 comparison_list += next_level_collection(item)
         return comparison_list
     new_list = next_level_collection(t)
-    return new_list
+    max_elem = max(new_list)
+    return max_elem
     
     
     
