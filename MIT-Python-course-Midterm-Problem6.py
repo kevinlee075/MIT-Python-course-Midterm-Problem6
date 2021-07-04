@@ -17,4 +17,16 @@ def max_val(t):
         No tuple or list is empty
         Returns the maximum int in t or (recursively) in an element of t
     """
+    def next_level_collection(element_t):
+        comparison_list = []
+        for item in element_t:
+            if type(item) == int:
+                comparison_list.append(item)
+            else:
+                comparison_list += next_level_collection(item)
+        return comparison_list
+    new_list = next_level_collection(t)
+    return new_list
+    
+    
     
