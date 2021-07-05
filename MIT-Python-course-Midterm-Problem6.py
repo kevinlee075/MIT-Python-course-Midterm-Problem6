@@ -18,15 +18,25 @@ def max_val(t):
         Returns the maximum int in t or (recursively) in an element of t
     """
     def next_level_collection(element_t):
-        comparison_list = []
-        for item in element_t:
-            if type(item) == int:
+        '''
+        define another function in which all elements of element_t
+        become int
+        '''
+        comparison_list = []                                                   #use an empty list first
+        
+        for item in element_t:                                                 #check every element in the variable list
+            if type(item) == int:                                              #if a certain element is int, add it to the comparison_list 
                 comparison_list.append(item)
-            else:
+                
+            else:                                                              #if a certain element is list or other types, use the recursion method for this function
                 comparison_list += next_level_collection(item)
+                
         return comparison_list
-    new_list = next_level_collection(t)
-    max_elem = max(new_list)
+    
+    
+    new_list = next_level_collection(t)                                        #make t using the next_level_collection function to change all elements to int
+    max_elem = max(new_list)                                                   #search the maximal int in the new_list
+    
     return max_elem
     
     
